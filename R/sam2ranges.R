@@ -72,6 +72,7 @@ sam2ranges <- function(sam, minq = 10, restricted = NULL)
 
     granges$left.clip <- .get_clip_length(mapping$CIGAR)
     granges$right.clip <- .get_clip_length(mapping$CIGAR, start=FALSE)
+    granges$map.qual <- mapping$MAPQ
 
     names(granges) <- mapping$QNAME
     granges
